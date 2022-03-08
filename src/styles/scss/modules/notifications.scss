@@ -1,0 +1,115 @@
+@import '../helpers/variables';
+
+@font-face {
+  font-family: 'Notification';
+  src: url('#{$nft-notifications-font-base-path}/notification.eot?s3g3t9');
+  src: url('#{$nft-notifications-font-base-path}/notification.eot?#iefixs3g3t9') format('embedded-opentype'),
+  url('#{$nft-notifications-font-base-path}/notification.woff?s3g3t9') format('woff'),
+  url('#{$nft-notifications-font-base-path}/notification.ttf?s3g3t9') format('truetype'),
+  url('#{$nft-notifications-font-base-path}/notification.svg?s3g3t9#notification') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+.notification-container {
+  box-sizing: border-box;
+  position: fixed;
+  top: $nft-notifications-container-top;
+  right: $nft-notifications-container-right;
+  z-index: $nft-notifications-container-z-index;
+  width: $nft-notifications-container-width;
+  padding: $nft-notifications-container-top-padding $nft-notifications-container-right-padding;
+  max-height: $nft-notifications-container-max-height;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+.notification {
+  box-sizing: border-box;
+  padding: $nft-notifications-padding-top $nft-notifications-padding-right $nft-notifications-padding-bottom $nft-notifications-padding-left;
+  border-radius: $nft-notifications-border-radius;
+  color: $nft-notifications-color;
+  background-color: $nft-notifications-background-color;
+  box-shadow: $nft-notifications-box-shadow;
+  cursor: $nft-notifications-cursor;
+  font-size: $nft-notifications-font-size;
+  line-height: $nft-notifications-line-height;
+  position: relative;
+  opacity: $nft-notifications-opacity;
+  margin-top: $nft-notifications-margin-top;
+  .title {
+    font-size: $nft-notifications-title-font-size;
+    line-height: $nft-notifications-title-line-height;
+    font-weight: $nft-notifications-title-font-weight;
+    margin: $nft-notifications-title-margin;
+  }
+  &:hover, &:focus {
+    opacity: $nft-notifications-hover-opacity;
+  }
+}
+
+.notification-enter {
+  visibility: hidden;
+  transform: translate3d(100%, 0, 0);
+}
+
+.notification-enter.notification-enter-active {
+  visibility: visible;
+  transform: translate3d(0, 0, 0);
+  transition: all $nft-notifications-transition-time;
+}
+
+.notification-leave {
+  visibility: visible;
+  transform: translate3d(0, 0, 0);
+}
+
+.notification-leave.notification-leave-active {
+  visibility: hidden;
+  transform: translate3d(100%, 0, 0);
+  transition: all $nft-notifications-transition-time;
+}
+
+.notification {
+  &:before {
+    position: absolute;
+    top: $nft-notifications-icon-top;
+    left: $nft-notifications-icon-left;
+    margin-top: $nft-notifications-icon-margin-top;
+    display: block;
+    font-family: 'Notification';
+    width: $nft-notifications-icon-width;
+    height: $nft-notifications-icon-height;
+    font-size: $nft-notifications-icon-font-size;
+    text-align: center;
+    line-height: $nft-notifications-icon-line-height;
+  }
+}
+
+.notification-info {
+  background-color: $nft-notifications-info-background-color;
+  &:before {
+    content: $nft-notifications-info-content;
+  }
+}
+
+.notification-success {
+  background-color: $nft-notifications-success-background-color;
+  &:before {
+    content: $nft-notifications-success-content;
+  }
+}
+
+.notification-warning {
+  background-color: $nft-notifications-warning-background-color;
+  &:before {
+    content: $nft-notifications-warning-content;
+  }
+}
+
+.notification-error {
+  background-color: $nft-notifications-error-background-color;
+  &:before {
+    content: $nft-notifications-error-content;
+  }
+}

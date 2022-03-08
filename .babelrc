@@ -1,0 +1,10 @@
+{
+  "presets": ["next/babel","@babel/preset-env"],
+  "plugins": [
+    "@babel/plugin-proposal-class-properties",
+    "@babel/plugin-proposal-do-expressions",
+    "babel-plugin-macros",
+    "@babel/transform-runtime",
+    ["styled-components", { "ssr": true }]
+  ]
+}
